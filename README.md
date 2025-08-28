@@ -49,10 +49,10 @@ print('Free space: $freeSpace bytes');
 
 ```dart
 // Get total space (convenience method)
-final totalSpace = await DiskUsage.getTotalSpace();
+final totalSpace = await DiskUsage.totalSpace();
 
 // Get free space (convenience method)
-final freeSpace = await DiskUsage.getFreeSpace();
+final freeSpace = await DiskUsage.freeSpace();
 ```
 
 ### With Custom Path
@@ -104,11 +104,11 @@ Gets disk space information.
 **Returns:**
 - `Future<int?>` - The disk space in bytes, or `null` if the operation fails
 
-##### `static Future<int?> getTotalSpace([String? path])`
+##### `static Future<int?> totalSpace([String? path])`
 
 Convenience method to get total disk space.
 
-##### `static Future<int?> getFreeSpace([String? path])`
+##### `static Future<int?> freeSpace([String? path])`
 
 Convenience method to get free disk space.
 
