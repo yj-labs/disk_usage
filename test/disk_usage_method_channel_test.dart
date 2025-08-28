@@ -12,16 +12,16 @@ void main() {
   setUp(() {
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(channel, (MethodCall methodCall) async {
-          if (methodCall.method == 'getDiskSpace') {
-            final arguments = methodCall.arguments as Map<Object?, Object?>;
-            final type = arguments['type'] as String;
-            // 模拟返回不同的磁盘空间值
-            return type == 'total'
-                ? 1000000000
-                : 500000000; // 1GB total, 500MB free
-          }
-          return null;
-        });
+      if (methodCall.method == 'getDiskSpace') {
+        final arguments = methodCall.arguments as Map<Object?, Object?>;
+        final type = arguments['type'] as String;
+        // 模拟返回不同的磁盘空间值
+        return type == 'total'
+            ? 1000000000
+            : 500000000; // 1GB total, 500MB free
+      }
+      return null;
+    });
   });
 
   tearDown(() {
